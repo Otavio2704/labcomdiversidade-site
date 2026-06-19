@@ -1,0 +1,155 @@
+.hero {
+  position: relative;
+  min-height: 100dvh; /* dvh = descontando barra do browser/Instagram */
+  min-height: 100vh;  /* fallback pra browsers antigos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    #1A0533 0%,
+    #3D1270 30%,
+    #7B2FBE 60%,
+    #b04499 80%,
+    #00B4A6 100%
+  );
+}
+
+/* Blobs decorativos */
+.hero__blob {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero__blob--1 {
+  top: -60px;
+  right: -40px;
+  width: clamp(160px, 45vw, 480px);
+}
+
+.hero__blob--2 {
+  bottom: -40px;
+  left: -30px;
+  width: clamp(120px, 35vw, 360px);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* padding-top sobrescrito no responsive.css */
+  padding-top: 72px;
+  padding-bottom: var(--space-12);
+  gap: var(--space-4);
+  width: 100%;
+}
+
+/* Logo hero */
+.hero__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.hero__logo-mark {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.hero__logo-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 12px rgba(233, 30, 140, 0.5));
+}
+
+.hero__logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.hero__logo-lab {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.hero__logo-div {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--branco);
+}
+
+.hero__logo-subtitle {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* Título — clamp ajustado pro mobile */
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 11vw, 4.5rem);
+  line-height: 1.05;
+}
+
+.hero__title-line--1 { color: var(--branco); }
+.hero__title-line--2 { color: var(--amarelo); }
+.hero__title-line--3 { color: var(--rosa); }
+
+/* Subtítulo */
+.hero__subtitle {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 600px;
+  line-height: 1.7;
+  padding-inline: var(--space-2);
+}
+
+/* CTAs — base mobile: coluna, full width */
+.hero__ctas {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 340px;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.hero__ctas .btn {
+  width: 100%;
+  min-height: 52px;
+  justify-content: center;
+  font-size: var(--text-base);
+}
+
+/* Logo como imagem no hero */
+.hero__logo-img {
+  height: clamp(48px, 12vw, 80px);
+  width: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.3));
+}

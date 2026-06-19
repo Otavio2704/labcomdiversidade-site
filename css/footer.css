@@ -1,0 +1,138 @@
+.footer {
+  background-color: #0F0F1A;
+  padding-top: var(--space-16);
+  padding-bottom: 0;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-12);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Col brand */
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.footer__logo-icon {
+  font-size: 1.4rem;
+}
+
+.footer__logo-text {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  color: var(--branco);
+}
+
+.footer__logo-text strong {
+  font-weight: 800;
+}
+
+.footer__nome {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: var(--space-2);
+  line-height: 1.4;
+}
+
+.footer__sub {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: var(--space-1);
+}
+
+.footer__coord {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* Col nav */
+.footer__col-titulo {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: var(--space-6);
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer__link {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer__link:hover {
+  color: var(--rosa);
+}
+
+/* Col contato */
+.footer__instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--rosa);
+  text-decoration: none;
+  margin-bottom: var(--space-6);
+  transition: opacity 0.2s ease;
+}
+
+.footer__instagram:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.footer__insta-icon {
+  flex-shrink: 0;
+}
+
+.footer__missao {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.7;
+  max-width: 260px;
+}
+
+/* Bottom */
+.footer__bottom {
+  padding-block: var(--space-6);
+  text-align: center;
+}
+
+.footer__copy {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* Safe area para iPhone com notch */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .footer__bottom {
+    padding-bottom: calc(var(--space-6) + env(safe-area-inset-bottom));
+  }
+}

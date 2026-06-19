@@ -1,0 +1,132 @@
+.mae-atipica {
+  padding-block: var(--section-padding-y);
+  background-color: var(--branco);
+}
+
+.mae-atipica__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.mae-atipica__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.mae-atipica__label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--verde);
+}
+
+.mae-atipica__titulo {
+  font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
+  color: var(--roxo-escuro);
+  font-weight: 800;
+  max-width: 700px;
+  line-height: 1.2;
+}
+
+/* Quote */
+.mae-atipica__quote {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: clamp(var(--text-base), 2vw, 1.4rem);
+  color: var(--texto);
+  background-color: rgba(123, 47, 190, 0.07);
+  border-left: 4px solid var(--rosa);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 2rem;
+  line-height: 1.8;
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+.mae-atipica__quote p::before {
+  content: '"';
+  color: var(--rosa);
+  font-size: 1.4em;
+  line-height: 0;
+  vertical-align: -0.2em;
+  margin-right: 2px;
+}
+
+/* Grid de cards */
+.mae-atipica__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+/* Card individual */
+.mae-card {
+  background-color: var(--branco);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid transparent;
+}
+
+.mae-card:nth-child(1) { border-top-color: var(--roxo); }
+.mae-card:nth-child(2) { border-top-color: var(--rosa); }
+.mae-card:nth-child(3) { border-top-color: var(--verde); }
+.mae-card:nth-child(4) { border-top-color: var(--amarelo); }
+.mae-card:nth-child(5) { border-top-color: var(--rosa); }
+
+
+
+.mae-card__icone {
+  font-size: 2.4rem;
+  margin-bottom: var(--space-4);
+  display: block;
+}
+
+.mae-card__titulo {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--roxo);
+  margin-bottom: var(--space-3);
+}
+
+.mae-card__texto {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--texto);
+  line-height: 1.75;
+}
+
+/* Animação de entrada dos cards (controlada via JS após render) */
+.mae-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.mae-card--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover só funciona quando visível */
+.mae-card--visible:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mae-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

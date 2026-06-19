@@ -1,0 +1,82 @@
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--texto);
+  background-color: var(--branco);
+  min-font-size: 16px;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  z-index: 9999;
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--rosa);
+  color: var(--branco);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  transition: top 0.2s ease;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--amarelo);
+  outline-offset: 3px;
+}
+
+/* Focus visible global */
+:focus-visible {
+  outline: 3px solid var(--amarelo);
+  outline-offset: 3px;
+}
+
+/* Headings padrão */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+}
+
+/* Labels de seção */
+.section-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--verde);
+  margin-bottom: var(--space-4);
+}
+
+/* Previne scroll horizontal em mobile */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Garante que imagens e SVGs não causem overflow */
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* Tap target mínimo de 44px para acessibilidade mobile */
+button,
+.btn,
+.navbar__link,
+.mobile-menu__link,
+.carrossel__btn {
+  min-height: 44px;
+}

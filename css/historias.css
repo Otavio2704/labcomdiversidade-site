@@ -1,0 +1,231 @@
+.historias {
+  padding-block: var(--section-padding-y);
+  background-color: var(--fundo-claro);
+  overflow: hidden;
+}
+
+.historias__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.historias__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.historias__label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--verde);
+}
+
+.historias__titulo {
+  font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
+  font-weight: 800;
+  color: var(--roxo-escuro);
+}
+
+.historias__subtitulo {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: var(--text-xl);
+  color: var(--texto-suave);
+}
+
+/* Carrossel */
+.carrossel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.carrossel__track-wrap {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.carrossel__track {
+  display: flex;
+  gap: var(--space-6);
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* Card de história */
+.historia-card {
+  flex: 0 0 calc(33.333% - var(--space-4));
+  background-color: var(--branco);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.historia-card__relato {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: var(--texto);
+  line-height: 1.75;
+  flex: 1;
+  position: relative;
+}
+
+.historia-card__relato::before {
+  content: '"';
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--rosa);
+  opacity: 0.25;
+  position: absolute;
+  top: -1.5rem;
+  left: -0.5rem;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.historia-card__perfil {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.historia-card__foto {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid var(--rosa);
+  object-fit: cover;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--roxo), var(--rosa));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-xl);
+  color: var(--branco);
+  overflow: hidden;
+}
+
+.historia-card__foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.historia-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.historia-card__nome {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--roxo);
+}
+
+.historia-card__empresa {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--texto-suave);
+}
+
+.historia-card__instagram {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--rosa);
+  text-decoration: none;
+  transition: text-decoration 0.2s;
+}
+
+.historia-card__instagram:hover {
+  text-decoration: underline;
+}
+
+/* Controles */
+.carrossel__controles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+}
+
+.carrossel__btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--borda);
+  background-color: var(--branco);
+  color: var(--roxo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.carrossel__btn:hover {
+  border-color: var(--rosa);
+  color: var(--rosa);
+  box-shadow: var(--shadow-md);
+  transform: scale(1.05);
+}
+
+.carrossel__btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Dots */
+.carrossel__dots {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.carrossel__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--borda);
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 0;
+}
+
+.carrossel__dot.active {
+  background-color: var(--rosa);
+  width: 24px;
+  border-radius: var(--radius-pill);
+}
+
+.carrossel__dot:hover:not(.active) {
+  background-color: var(--roxo);
+  opacity: 0.5;
+}
+
+/* Garante que o carrossel nunca cause scroll lateral na página mobile */
+.historias {
+  overflow-x: hidden;
+}

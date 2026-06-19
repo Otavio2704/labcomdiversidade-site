@@ -1,0 +1,54 @@
+:root {
+  /* Cores */
+  --roxo:        #7B2FBE;
+  --roxo-escuro: #1A0533;
+  --rosa:        #E91E8C;
+  --verde:       #00B4A6;
+  --amarelo:     #F5C400;
+  --branco:      #FFFFFF;
+  --fundo-claro: #F9F6FF;
+  --texto:       #1A1A2E;
+  --texto-suave: #6B6B8A;
+  --borda:       #E8E0F5;
+
+  /* Tipografia */
+  --font-display: 'Poppins', sans-serif;
+  --font-body:    'Lora', serif;
+
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+  --text-5xl:  clamp(2.5rem, 6vw, 4.5rem);
+
+  /* Espaçamento */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  --section-padding-y: clamp(4rem, 8vw, 6rem);
+  --container-max: 1200px;
+
+  /* Bordas */
+  --radius-sm:   8px;
+  --radius-md:   16px;
+  --radius-lg:   24px;
+  --radius-xl:   40px;
+  --radius-pill: 9999px;
+
+  /* Sombras */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 48px rgba(0,0,0,0.12);
+  --shadow-xl: 0 20px 60px rgba(0,0,0,0.20);
+}

@@ -1,0 +1,199 @@
+.ebook {
+  position: relative;
+  padding-block: var(--section-padding-y);
+  background: linear-gradient(135deg, #00B4A6 0%, #7B2FBE 100%);
+  overflow: hidden;
+}
+
+.ebook__blob {
+  position: absolute;
+  top: 50%;
+  right: -60px;
+  transform: translateY(-50%);
+  width: clamp(200px, 35vw, 420px);
+  pointer-events: none;
+}
+
+.ebook__container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 40fr 60fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+/* Capa */
+.ebook__capa {
+  display: flex;
+  justify-content: center;
+}
+
+.ebook__figura {
+  display: flex;
+  justify-content: center;
+}
+
+.ebook__capa-placeholder {
+  width: clamp(200px, 28vw, 320px);
+  aspect-ratio: 2/3;
+  background: linear-gradient(160deg, #1A0533 0%, #3D1270 50%, #7B2FBE 100%);
+  border-radius: 12px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+  transform: rotate(-2deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+  cursor: default;
+}
+
+.ebook__capa-placeholder:hover {
+  transform: rotate(0deg) scale(1.02);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
+}
+
+.ebook__capa-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-6);
+  gap: var(--space-4);
+}
+
+.ebook__capa-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.ebook__capa-lab {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ebook__capa-usjt {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--amarelo);
+}
+
+.ebook__capa-titulo-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.ebook__capa-emoji {
+  font-size: 2.5rem;
+}
+
+.ebook__capa-titulo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(var(--text-xl), 3vw, var(--text-3xl));
+  color: var(--branco);
+  line-height: 1.15;
+}
+
+.ebook__capa-rodape {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: var(--space-3);
+}
+
+.ebook__capa-rodape span {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--rosa);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Conteúdo */
+.ebook__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.ebook__label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.12);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+}
+
+.ebook__titulo {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
+  font-weight: 800;
+  color: var(--branco);
+  line-height: 1.15;
+}
+
+.ebook__subtitulo {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: var(--text-xl);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+.ebook__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.8;
+}
+
+/* Capítulos */
+.ebook__capitulos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.ebook__capitulos li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ebook__cap-icon {
+  color: var(--amarelo);
+  font-size: var(--text-base);
+  flex-shrink: 0;
+}
+
+/* CTA */
+.ebook__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.ebook__nota {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.55);
+  margin-left: var(--space-3);
+}

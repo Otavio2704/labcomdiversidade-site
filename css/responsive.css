@@ -1,0 +1,376 @@
+/* =============================================
+   RESPONSIVE — Mobile First
+   Base = celular (< 480px)
+   Breakpoints: 480 | 768 | 1024 | 1280
+   ============================================= */
+
+/* ============================================
+   BASE MOBILE (todo CSS sem media query)
+   ============================================ */
+
+/* Container */
+.container {
+  padding-inline: var(--space-4);
+}
+
+/* Navbar */
+.navbar {
+  height: 60px;
+}
+
+.navbar__links {
+  display: none;
+}
+
+.navbar__hamburger {
+  display: flex;
+}
+
+/* Hero — usa dvh para browser do Instagram não cortar */
+.hero {
+  min-height: 100dvh;
+  min-height: 100vh; /* fallback */
+}
+
+.hero__content {
+  padding-top: 72px;
+  padding-bottom: var(--space-12);
+  gap: var(--space-4);
+}
+
+.hero__logo {
+  margin-bottom: var(--space-2);
+}
+
+.hero__logo-icon {
+  font-size: 2rem;
+}
+
+.hero__logo-div {
+  font-size: var(--text-xl);
+}
+
+/* Título hero — menor em tela pequena */
+.hero__title {
+  font-size: clamp(2rem, 11vw, 3.5rem);
+}
+
+/* Subtítulo hero — tamanho legível */
+.hero__subtitle {
+  font-size: var(--text-base);
+  padding-inline: var(--space-2);
+}
+
+/* CTAs empilhados em coluna, largura confortável para toque */
+.hero__ctas {
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 340px;
+  gap: var(--space-3);
+}
+
+.hero__ctas .btn {
+  width: 100%;
+  min-height: 52px;
+  justify-content: center;
+  font-size: var(--text-base);
+}
+
+/* Sobre */
+.sobre__container {
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+.sobre__image {
+  order: -1;
+}
+
+.sobre__img-placeholder {
+  aspect-ratio: 16/9;
+  border-radius: var(--radius-lg);
+}
+
+.sobre__titulo {
+  font-size: clamp(var(--text-xl), 5.5vw, var(--text-3xl));
+}
+
+.sobre__body p {
+  font-size: var(--text-base);
+}
+
+/* Mae Atipica */
+.mae-atipica__grid {
+  grid-template-columns: 1fr;
+}
+
+.mae-atipica__titulo {
+  font-size: clamp(var(--text-2xl), 7vw, var(--text-4xl));
+}
+
+.mae-atipica__quote {
+  font-size: var(--text-base);
+  padding: var(--space-4) var(--space-4) var(--space-4) var(--space-6);
+}
+
+/* Ebook */
+.ebook__container {
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+}
+
+.ebook__capa {
+  order: -1;
+}
+
+.ebook__capa-placeholder {
+  width: clamp(160px, 50vw, 240px);
+  margin-inline: auto;
+}
+
+.ebook__titulo {
+  font-size: clamp(var(--text-2xl), 7vw, var(--text-4xl));
+}
+
+.ebook__subtitulo {
+  font-size: var(--text-base);
+}
+
+.ebook__cta {
+  align-items: stretch;
+}
+
+.ebook__cta .btn {
+  width: 100%;
+  min-height: 52px;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Carrossel — 1 card, sem overflow lateral */
+.carrossel__track-wrap {
+  overflow: hidden;
+  /* Garante que não cria scroll lateral na página */
+  max-width: 100%;
+}
+
+.historia-card {
+  /* Subtrai o gap dos dois lados para não vazar */
+  flex: 0 0 calc(100% - 2px);
+  min-width: 0;
+}
+
+.carrossel__btn {
+  width: 44px;
+  height: 44px;
+}
+
+/* Manifesto */
+.manifesto__titulo {
+  font-size: clamp(1.75rem, 8vw, 3rem);
+}
+
+.manifesto__texto p {
+  font-size: clamp(var(--text-base), 4vw, 1.2rem);
+}
+
+/* Footer */
+.footer__container {
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  padding-bottom: var(--space-10);
+}
+
+/* ============================================
+   MOBILE GRANDE (>= 480px)
+   ============================================ */
+@media (min-width: 480px) {
+  .container {
+    padding-inline: var(--space-6);
+  }
+
+  .hero__ctas {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: none;
+    width: auto;
+  }
+
+  .hero__ctas .btn {
+    width: auto;
+    min-width: 200px;
+  }
+
+  .ebook__cta {
+    align-items: flex-start;
+  }
+
+  .ebook__cta .btn {
+    width: auto;
+    min-width: 260px;
+  }
+}
+
+/* ============================================
+   TABLET (>= 768px)
+   ============================================ */
+@media (min-width: 768px) {
+  .navbar {
+    height: 72px;
+  }
+
+  .hero__content {
+    gap: var(--space-6);
+  }
+
+  .sobre__container {
+    gap: var(--space-12);
+  }
+
+  .sobre__img-placeholder {
+    aspect-ratio: 4/3;
+  }
+
+  .mae-atipica__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mae-atipica__grid .mae-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - var(--space-3));
+    margin-inline: auto;
+  }
+
+  /* Carrossel — 2 cards */
+  .historia-card {
+    flex: 0 0 calc(50% - 12px);
+  }
+
+  .ebook__container {
+    grid-template-columns: 38fr 62fr;
+    gap: var(--space-12);
+    align-items: center;
+  }
+
+  .ebook__capa {
+    order: 0;
+  }
+
+  .ebook__capa-placeholder {
+    width: 100%;
+    max-width: 280px;
+    margin-inline: 0;
+  }
+
+  .footer__container {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-10);
+  }
+
+  .footer__col--brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ============================================
+   DESKTOP (>= 1024px)
+   ============================================ */
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: var(--space-8);
+  }
+
+  /* Navbar: links visíveis, hamburger sumiu */
+  .navbar__links {
+    display: flex;
+  }
+
+  .navbar__hamburger {
+    display: none;
+  }
+
+  .hero {
+    min-height: 100vh;
+  }
+
+  .hero__content {
+    padding-top: 88px;
+    padding-bottom: var(--space-16);
+    gap: var(--space-6);
+  }
+
+  .hero__logo-icon {
+    font-size: 2.5rem;
+  }
+
+  .hero__logo-div {
+    font-size: var(--text-2xl);
+  }
+
+  .hero__title {
+    font-size: var(--text-5xl);
+  }
+
+  .hero__subtitle {
+    font-size: clamp(var(--text-base), 2.5vw, var(--text-xl));
+  }
+
+  .sobre__container {
+    grid-template-columns: 55fr 45fr;
+    gap: var(--space-16);
+  }
+
+  .sobre__image {
+    order: 0;
+  }
+
+  .sobre__img-placeholder {
+    aspect-ratio: 4/5;
+    border-radius: 40% 60% 55% 45% / 50% 45% 55% 50%;
+  }
+
+  .mae-atipica__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .mae-atipica__grid .mae-card:last-child:nth-child(odd) {
+    grid-column: auto;
+    max-width: none;
+    margin-inline: 0;
+  }
+
+  /* Carrossel — 3 cards */
+  .historia-card {
+    flex: 0 0 calc(33.333% - 16px);
+  }
+
+  .ebook__container {
+    grid-template-columns: 40fr 60fr;
+    gap: var(--space-16);
+  }
+
+  .ebook__capa-placeholder {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .footer__container {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-12);
+  }
+
+  .footer__col--brand {
+    grid-column: auto;
+  }
+}
+
+/* ============================================
+   DESKTOP GRANDE (>= 1280px)
+   ============================================ */
+@media (min-width: 1280px) {
+  .container {
+    padding-inline: var(--space-8);
+  }
+}
